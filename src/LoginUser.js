@@ -15,7 +15,7 @@ export const LoginUser = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/');
+      const response = await fetch('https://ems-backend-7mfj.onrender.com/');
       const data = await response.json();
       const isValidUser = ()=>{
         if(username==="barath@gmail.com" && pwlogin==="123456"){

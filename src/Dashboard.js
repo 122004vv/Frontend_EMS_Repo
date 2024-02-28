@@ -18,7 +18,7 @@ function Dashboard() {
 
   useEffect(() => {
     // Fetch employee data from the server
-    fetch('http://localhost:5000/')
+    fetch('https://ems-backend-7mfj.onrender.com/')
       .then(response => response.json())
       .then(data => {
         setEmployeeData(data);

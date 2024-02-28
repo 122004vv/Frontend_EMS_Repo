@@ -84,7 +84,7 @@ const CreateEmployee = () => {
       window.location.reload();
     } else {
       event.preventDefault();
-      axios.post('http://localhost:5000/insert',{firstname, lastname, department, designation, salary, city,state,pincode,country,street,
+      axios.post('https://ems-backend-7mfj.onrender.com/insert',{firstname, lastname, department, designation, salary, city,state,pincode,country,street,
       dob, age, gender, saccess, serverlevel, awards, award1, award2, award3, email, password, 
       certifications, cert1, cert2, cert3, url1, url2, url3, education})
     .then(res=>{

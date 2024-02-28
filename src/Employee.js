@@ -6,13 +6,13 @@ import axios from 'axios'
 function Employee() {
     const [employee,setEmployee]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:8081/')
+        axios.get('https://ems-backend-7mfj.onrender.com/')
         .then(res=>setEmployee(res.data))
         .catch(err=>console.log(err));
     },[])
     const handleDelete=async(id)=>{
         try{
-            await axios.delete(`http://localhost:8081/delete/${id}`)
+            await axios.delete(`https://ems-backend-7mfj.onrender.com/delete/${id}`)
             window.location.reload()
         }
         catch(err){
