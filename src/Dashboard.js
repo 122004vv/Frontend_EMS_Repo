@@ -18,7 +18,7 @@ function Dashboard() {
 
   useEffect(() => {
     // Fetch employee data from the server
-    fetch('https://ems-backend-7mfj.onrender.com/')
+    fetch('https://localhost:5000/')
       .then(response => response.json())
       .then(data => {
         setEmployeeData(data);
@@ -73,7 +73,7 @@ function Dashboard() {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav>
-              <Nav.Link as={Link} to="/">
+              <Nav.Link as={Link} to="/about">
                 About Us
               </Nav.Link>
               <Nav.Link as={Link} to="/dashboard">

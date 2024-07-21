@@ -11,6 +11,7 @@ import LoginUser from './LoginUser';
 import Signup from './Signup';
 import { AuthProvider, useAuth } from './AuthContext';
 import Dashboard from './Dashboard';
+import About from './About';
 
 function App() {
   return (
@@ -18,8 +19,10 @@ function App() {
       <BrowserRouter>
       <AuthProvider>
       <Routes>
-        <Route path="/adminLogin" element={<LoginUser/>}/>
+        <Route path="/login" element={<LoginUser/>}/>
           <Route path="/" element={<Firstpg />} />
+          <Route path="/about" 
+          element={<PrivateRoute><About /></PrivateRoute>} />
           <Route
             path="/create"
             element={<PrivateRoute><CreateEmployee /></PrivateRoute>}

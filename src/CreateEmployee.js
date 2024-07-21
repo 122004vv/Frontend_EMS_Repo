@@ -7,6 +7,9 @@ import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 const CreateEmployee = () => {
+  //Declare all the Required Values -->Make sure that every useState is set with an empty string except additional
+  //As it will be used as a check variable with boolean type
+
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [department, setDepartment] = useState('');
@@ -83,10 +86,11 @@ const CreateEmployee = () => {
       alert('No future date or Date before 18 years is allowed for Date of Birth field');
       window.location.reload();
     } else {
-      event.preventDefault();
-      axios.post('https://ems-backend-7mfj.onrender.com/insert',{firstname, lastname, department, designation, salary, city,state,pincode,country,street,
-      dob, age, gender, saccess, serverlevel, awards, award1, award2, award3, email, password, 
-      certifications, cert1, cert2, cert3, url1, url2, url3, education})
+      // event.preventDefault();
+      // axios.post('process.env.API_URL/insert',{firstname, lastname, department, designation, salary, city,state,pincode,country,street,
+      // dob, age, gender, saccess, serverlevel, awards, award1, award2, award3, email, password, 
+      // certifications, cert1, cert2, cert3, url1, url2, url3, education})
+      console.log("Data posted to backend Succesfully!")
     .then(res=>{
       toast.success("Employee Added Successfully")
       setTimeout(navigate('/dashboard'),5);
@@ -116,7 +120,7 @@ const CreateEmployee = () => {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav>
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/about">
                 About Us
               </Nav.Link>
               <Nav.Link as={Link} to="/dashboard">

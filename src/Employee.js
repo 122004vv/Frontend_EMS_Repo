@@ -5,14 +5,18 @@ import axios from 'axios'
 
 function Employee() {
     const [employee,setEmployee]=useState([])
-    useEffect(()=>{
-        axios.get('https://ems-backend-7mfj.onrender.com/')
-        .then(res=>setEmployee(res.data))
-        .catch(err=>console.log(err));
-    },[])
-    const handleDelete=async(id)=>{
+    const [emptyEmp,setEmptyEmp]=useState(true)
+
+    // useEffect(()=>{
+    //     axios.get(process.env.API_URL)
+    //     .then(res=>setEmployee(res.data))
+    //     .catch(err=>console.log(err));
+    // },[])
+
+    const handleDelete=(id)=>{
         try{
-            await axios.delete(`https://ems-backend-7mfj.onrender.com/delete/${id}`)
+            // await axios.delete(process.env.API_URL`/${id}`)
+            console.log(`Data with ${id} has been deleted!`)
             window.location.reload()
         }
         catch(err){
@@ -39,7 +43,8 @@ function Employee() {
                     </tr>
                 </thead>
                 <tbody>
-                    {
+                    {/*Since there will be no data from the backend to fetch and display , let it be false.*/}
+                    {emptyEmp && 
                         employee.map((data,i)=>(
                             <tr key={i}>
                                 <td>{data.Ename}</td>
@@ -50,7 +55,7 @@ function Employee() {
                                 <td>{data.Dob}</td>
                                 <td>{data.Age}</td>
                                 <td>
-                                    <button className='btn btn-primary' onClick={e=>handleDelete(data.EID)}>Del</button>
+                                    <button className='btn btn-primary' >Del</button>
                                 </td>
                             </tr>
                         ))

@@ -13,11 +13,6 @@ const Contain = styled.div`
   color: #fff;
 `;
 
-// const Logo = styled.h1`
-//   font-size: 2rem;
-//   margin-right: 20px;
-// `;
-
 const Button = styled(Link)`
   display: inline-block;
   padding: 10px 20px;
@@ -49,7 +44,7 @@ const Firstpg = () => {
         </Container>
       </Navbar>
     <Contain>
-      <Button to="/adminLogin">Admin Login</Button>
+      <Button to="/login">Admin Login</Button>
       <Button to="/employeeLogin">Employee Login</Button>
     </Contain>
     </div>

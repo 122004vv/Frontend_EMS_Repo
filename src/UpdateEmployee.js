@@ -15,14 +15,18 @@ function UpdateEmployee() {
     const navigate=useNavigate();
 
     function handleSubmit(event){
-        event.preventDefault();
-        console.log(name, department, designation, salary, address, dob, age);
-        axios.put('http://localhost:8081/update/'+id,{name,department,designation,salary,address,dob,age})
+
+        // event.preventDefault();
+        // console.log(name, department, designation, salary, address, dob, age);
+        // axios.put(process.env.API_URL+id,{name,department,designation,salary,address,dob,age})
+
+        console.log("UPDATE DATA Loaded to Backend Succesfully")
         .then(res=>{
             console.log(res);
             navigate('/');
         }).catch(err=>console.log(err));
     }
+    
   return (
     <div className='f-flex vh-100 bg-primary justify-content-center align-items-center'>
         <div className='w-50 bg-white rounded p-3'>

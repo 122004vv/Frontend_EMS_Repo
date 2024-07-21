@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Navbar, Container } from 'react-bootstrap';
-import { useAuth } from './AuthContext';
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -11,14 +10,14 @@ export const Signup = () => {
   const [pwlogin, setPwlogin] = useState('');
   const[name,setName]=useState('')
   const[newpw,setnewpw]=useState('')
-
   const handleLogin = async (event) => {
     console.log("hello")
     navigate('/adminLogin')
   }
   
   return (
-    <div style={{ backgroundColor: '#1e1e1e', color: '#fff',overflow:'hidden',Height:'150px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{backgroundColor: '1e1e1e' , marginTop:'55px'}}>
+    <div style={{ backgroundColor: '1e1e1e', color: '#fff',overflow:'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <Navbar bg="dark" variant="dark" fixed="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
@@ -27,7 +26,7 @@ export const Signup = () => {
           <Navbar.Toggle />
         </Container>
       </Navbar>
-      <h3 className="mt-5">SIGN UP PAGE</h3>
+      <h3 className="mt-5" style={{color:'black', marginBottom:'20px'}}>SIGN UP PAGE</h3>
       <div className="w-50 bg-dark rounded p-3">
         <form onSubmit={handleLogin}>
         <div className="mb-2">
@@ -86,7 +85,7 @@ export const Signup = () => {
               onChange={(e) => setnewpw(e.target.value)}
             />
           </div>
-          <div>
+          <div >
           <input required type="checkbox" name="termsandconditions" style={{ backgroundColor: '#2e2e2e', color: '#fff' ,margin:"5px"}} />
           <label htmlFor="termsandconditions" style={{ color: '#fff' }}>
                You are agreeing to our terms & conditions
@@ -97,17 +96,22 @@ export const Signup = () => {
            SIGN IN & VERIFY
           </button>
           </div>
-          <br />
-          <label htmlFor="termsandconditions" style={{ color: '#fff' }}>
+          
+        </form>
+        <label htmlFor="termsandconditions" style={{ color: '#fff' }}>
                Already have an Employee account?
           </label>
-          <div className="bg-dark rounded  mb-3" style={{ marginBottom: '15px' }}>
-          <button type="submit"  className="btn btn-success mb-3 w-100 rounded-0" style={{ backgroundColor: 'white', color: '#000' }}>
+          <Link to="/login">
+          <button className="btn btn-success mb- w-100 rounded-0"  >
           LOG IN
-          </button>
-          </div>
-        </form>
+          </button
+          ></Link>
+        
       </div>
+    </div>
+    {/* <div className="bg-dark rounded  mb-3" style={{ marginBottom: '15px' }}>
+    </div> */}
+    
     </div>
   );
 };
