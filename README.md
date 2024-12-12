@@ -1,9 +1,9 @@
-# Employee Management System - Front end using React js , CSS and React Bootstrap
+# Front end Template - Employee Management System - Using React js , CSS & React Bootstrap
 
 ## About:
 
-This project was done for a test purpose , to check the time taken to create a simple Employee details form , along with the requirements and the data form filling process , code cleanliness and for dockerizing a simple frontend application.
-This repository has only the frontend code for the form.
+This project was done for a learning purpose , to create a simple Employee details form , along with the requirements and the data form filling process , code cleanliness and for dockerizing a simple frontend application.
+This repository has only the frontend code for the form. I use this as a template for frontend development starter.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Use this script in your VSCode to clone this repository into your local system :
